@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Produtos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+
+    <link 
+          href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" 
+          rel="stylesheet" 
+          crossorigin="anonymous">
+
+      <script>
+        // produtos = [];
+        var paginaAtual  =1
+
+        produtos = [
+        {codigo: 100, nome: 'Gravata', preco: 10.00
+        }]
+
+        function LoadProducts(){
+          //Carregar os produtos daquela pagina
+        }
+
+        LoadProducts()
+
+        function ShowPaginator(paginaAtual){
+          //Mostrar o paginador somente se ha mais de uma paginas
+        }
+
+        function AddProduct(nome, preco){
+          //Adicionar no array
+          //Chamar funcao para adicionar linha na tabela
+        }
+
+        function AddLineInTable(codigo, nome, preco){
+          //Adicionar a linha
+        }
+      </script>
+
+  </head>
+  <body>
+
+        <!--Barra de navegação do app-->
+        <nav class="navbar bg-body-tertiary">
+
+          <div class="container-fluid"> 
+            <a class="navbar-brand" href="#">
+              <img src="http://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="LogoMarca do sistema" width="30" height="24"
+              class="d-inline-block align-text-top">
+              SisGabriel Webpro v10.3.1
+            </a>
+          </div>
+        </nav>
+
+        <!--Container principal-->
+        <div class="container" style="padding-top: 20px; ">
+          <div class="row">
+            <div class="col">
+              <!--Titulo da pagina-->
+              <h3>Produtos</h3>
+            </div>
+            <!--campo de busca dos produtos-->
+            <div class="col-md-auto">
+              <div class="input-group">
+                <input type="text" class="form-control"
+                        placeholder="Buscar Produto...">
+                        <button class="btn btn-warning" type="submit">
+                          <i class="fas fa-search" style="padding: 5px;"></i>Buscar
+                        </button> 
+              </div>
+            </div>
+            <!--Botao novo produto-->
+            <div class="col col-lg-1">
+              <button type="button" class="btn btn-primary" 
+                style="float: right;" data-bs-toggle="modal" 
+                data-bs-target="#addNewProduct">
+                <i class="fas fa-plus" style="padding: 5px;"></i>Novo
+              </button>
+            </div>
+          </div>
+          <!--Nova linha para a tabela produtos-->
+          <div class="row align-itens-center">
+              <div class="col">
+                <!--Aqui vai a tabel com os produtos-->
+                <table class="table">
+                  <thead>
+                      <tr>
+                        <th scope="col" class="text-end">#</th>
+                        <th scope="col" class="text-left">Nome</th>
+                        <th scope="col" class="text-end"> R$</th>
+                        <th scope="col" class="text-center">Ações</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-end">101</td>
+                      <td>Camiseta Polo</td>
+                      <td class="text-end">100,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">102</td>
+                      <td>Meiao</td>
+                      <td class="text-end">15,50</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">103</td>
+                      <td>Bone</td>
+                      <td class="text-end">120,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">104</td>
+                      <td>Shorts</td>
+                      <td class="text-end">20,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">105</td>
+                      <td>Casaco</td>
+                      <td class="text-end">150,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">106</td>
+                      <td>Tenis</td>
+                      <td class="text-end">100,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">107</td>
+                      <td>Caneta</td>
+                      <td class="text-end">100,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">108</td>
+                      <td>Relogio SEIKO</td>
+                      <td class="text-end">10.000,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">109</td>
+                      <td>Gravata</td>
+                      <td class="text-end">100,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end">110</td>
+                      <td>rolex</td>
+                      <td class="text-end">150.000,00</td>
+                      <td class="text-center">
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-pen"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+          <!--Paginador de dados(é uma barra nav) -->
+          <div class="row">
+            <div class="col">
+              <nav aria-label="..." style="float:right;" >
+                <ul class="pagination pagination-sm">
+                  <li class="page-item active" aria-current="page">
+                      <span class="page-link">1</span>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item"> 
+                    <a href="#" class="page-link">3</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!--Janela modal para cadastrar produto-->
+        <div class="modal fade" id="addNewProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!--Conteudo do modal vai aqui.. partes: header, body, footer-->
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Novo Produto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                <!--Formulario com campos de cadastro-->
+                <p>Preencha todos os campos para cadastrar um novo produto</p>
+                <form>
+                  <div class="mb-3">
+                    <label for="NomeDoProduto" class="form-label">Nome do produto</label>
+                    <input type="text" class="form-control" id="NomeDoProduto">
+                  </div>
+                  <div class="mb-3">
+                    <label for="PreçoProduto" class="form-label">Preço</label>
+                    <input type="text" class="form-control w-25" id="PreçoProduto" aria-describedby="ajudaCampoPreço">
+                    <div id="ajudaCampoPreço" class="form-text">
+                      Exemplos: 10,00 2000,99 30102.05
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="modal-footer">
+                <!--Botoes de ação de formulario-->
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+                <button type="button" class="btn btn-warning">Salvar</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+    crossorigin="anonymous"></script>
+
+  </body>
+  <!--Exercicios desafios:-->
+  <!--
+  1 - Fazer o botao salvar incluir um produto na tabela por javascript(sem backend).
+  dicas: 
+  - Elimine todas as linhas da tabela antes de começar.
+  - Crie uma funtion chamada AddProduct que adicione o produto num array chamado Produtos e que tambem acrescente a linha na tabela
+  - O array produtos esta fora da função
+  -->
+
+
+  <!--
+  2 - Fazer o paginador funcionar. Considerando o tamanho max da pagina como 10 produtos por pg.
+  Crie a quantidade de paginas para o paginador de acordo com a quantidade de produtos existentes na tabela
+  Sempre que adicionar novo produto tera que verificar se ha necessidade de criar uma nova pagina
+
+  dicas:
+  -Começar o exercicio 2 antes do 1.
+  criando um array de produtos fixos para teste.
+  
+  
+  -->
+
+
+
+</html>
