@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+
+        <title>Login integração</title>
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            //Exibir a div(messageBox) com o erro
+            function showErrorMessage(messageContent){
+                //Atribuir o texto da mensagem no parag
+                document.getElementById("message").innerHTML = messageContent;
+                var divMb = document.getElementById("messageBox");
+
+                //Exibir a div de erro
+                divMb.style.display = "Block";
+
+            }
+            //Funcao de limpar o erro
+            function CleanError(){
+                var divMb = document.getElementById("messageBox");
+                divMb.style.display = "none";
+
+            }
+
+            //Verifica se o formulario esta valido(preenchido corretamente)
+            // Se estiver retorna TRUE senao, FALSE
+            function IsValid(email, password){ 
+                var valid = false;
+                
+                if(email.length > 0 && password.length > 0){
+                    valid = true;
+                    
+                }
+                else if(email.length == 0 && password.length == 0){
+                    showErrorMessage("Informe o Email e a Senha.")
+                }
+                else if(email.length == 0 ){
+                    showErrorMessage("Informe o Email.")
+                }
+                else{
+                    showErrorMessage("Informe a Senha.")
+                }
+
+                return valid;
+            }
+
+            async function PerformSignIn(){
+                var email = document.getElementById("fieldEmail").value;
+                var password = document.getElementById("fieldPassword").value;
+
+                //Remover Eventuais Espaçoes em branco do email e senha(antes e depois)
+                email = email.trim();
+                password = password.trim();
+
+                if(IsValid(email, password)){
+
+                    const ReqHeaders = new Headers();
+                    ReqHeaders.append("Content-Type", "text/plain");
+                    ReqHeaders.append("email",email);
+                    ReqHeaders.append("password", password);
+                    //proseguir com a chamada do backend
+                    const response = await fetch(
+
+                    //colocar ip do computador utilizado
+                        "http://172.16.13.48:3000/login",{
+                            method: "POST",
+                            headers: ReqHeaders
+                        }
+
+                    )
+
+                    if(response.ok)
+                    {
+                        //da a resposta http 200 (exibir sucesso)
+                        //redirecionar o usuario para a pagina principal
+                    }
+                    else{
+                        //da a resposta de erro. deu erro? qual erro?
+                        //mostrar o texto de erro
+                        showErrorMessage(response.status)
+
+                    }
+                }
+            }
+        </script>
+
+
+    </head>
+    <body>
+        <section id="container">
+        <h1>Login</h1>
+
+        <form>
+            <p>
+
+                <label for="fieldEmail">Email: </label>
+                <input type="text" id="fieldEmail" onfocus="CleanError()">
+            </p>
+            <p>
+                <label for="fieldPassword">Password: </label>
+                <input type="password" id="fieldPassword" onfocus="CleanError()">
+            </p>
+
+            <button type="button" id="btnSignIn" onclick="PerformSignIn()">Sign in</button>
+        </form>
+    
+        <div id="messageBox">
+            <p id="message"></p>
+        </div>
+
+    </section>
+
+        
+    
+    
+    
+    
+    
+    </body>
+</html>
